@@ -1,0 +1,26 @@
+<html >
+  <head>
+    <!--  <link rel="stylesheet" type="text/css" href="bootstrap.min.css" /> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script> -->
+	 <script src="C:/Users/HEMONTH/Desktop/desktop/java/angular js/code/public/javascripts/angular.js"></script>
+      <script src="C:/Users/HEMONTH/Desktop/desktop/java/angular js/code/public/javascripts/applicaion1.js"></script>
+	  <!--  <script src="javascripts/applicaion1directive.js"></script>  -->
+  </head>
+<!--   ------------------------------------- -->
+  <body ng-app="myShoppingList" ng-controller="MyCtrl as myCtrl">
+
+    <!-- Show Inventory: <input type="checkbox" ng-model="myCtrl.click1" /><br> -->
+    <div>
+    <h1>Inventory</h1>
+      <ul>
+        <li ng-repeat="x in myCtrl.inventoryProducts">{{x}}&nbsp
+    	<button ng-click="myCtrl.removeItem1($index)" ng-mouseenter ="myCtrl.remove()"  ng-mouseleave = "myCtrl.empty()" >X</button>&nbsp
+    	<button ng-click="myCtrl.addItems($index)" ng-mouseenter ="myCtrl.addToDo()"  ng-mouseleave = "myCtrl.empty()" >D</button>
+    	</li>
+      </ul>
+      <input ng-model="myCtrl.addToList">
+      <button ng-disabled = "!myCtrl.isValid()" ng-click="myCtrl.addItem1()">Add</button>
+      </div>
+<footer> {{myCtrl.display}}   </footer>
+      </body>
+      </html>

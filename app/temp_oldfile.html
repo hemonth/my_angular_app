@@ -1,0 +1,56 @@
+<h1>Select One</h1>
+
+Open task Manager: <input type="checkbox" ng-model="myCtrl.click0" /><br>
+<div ng-show="myCtrl.click0">
+<h1>TO Do List</h1>
+<ul>
+  <li ng-repeat="x in myCtrl.products">{{x}}&nbsp
+<span><select><option ng-repeat="x in myCtrl.quantity">{{x}}<option></select></span>&nbsp
+<button ng-click="myCtrl.removeItem($index)" ng-mouseenter ="myCtrl.remove()"  ng-mouseleave = "myCtrl.empty()"  >X</button>&nbsp
+<button ng-model = "myCtrl.item" ng-click="myCtrl.done($index)" ng-mouseenter ="myCtrl.markAsDone()"  ng-mouseleave = "myCtrl.empty()" >D</button>
+</li>
+</ul>
+<input ng-model="myCtrl.addMe">
+<button ng-disabled = "!myCtrl.isValid()" ng-click="myCtrl.addItem()">Add</button>
+
+</div>
+<!-- --------------------------------------------------------------- -->
+Show Inventory: <input type="checkbox" ng-model="myCtrl.click1" /><br>
+<div ng-show="myCtrl.click1">
+<h1>Inventory</h1>
+<ul>
+  <li ng-repeat="x in myCtrl.inventoryProducts">{{x}}&nbsp
+<button ng-click="myCtrl.removeItem1($index)" ng-mouseenter ="myCtrl.remove()"  ng-mouseleave = "myCtrl.empty()" >X</button>&nbsp
+<button ng-click="myCtrl.addItems($index)" ng-mouseenter ="myCtrl.addToDo()"  ng-mouseleave = "myCtrl.empty()" >D</button>
+</li>
+</ul>
+<input ng-model="myCtrl.addToList">
+<button ng-disabled = "!myCtrl.isValid()" ng-click="myCtrl.addItem1()">Add</button>
+</div>
+<!--  <p ng-repeat = " x in myCtrl.inventoryProducts" >consumed items are: {{x}} </p>
+ <button ng-model = "myCtrl.click1" >Purchase History</button>-->
+<!--  --------------------------------------------------- -->
+Show purchase History: <input type="checkbox" ng-model="myCtrl.click2" /><br>
+<div class ="ph" ng-show ="myCtrl.click2" >
+<h1> Purchase  History </h1>
+<li ng-repeat = "x in myCtrl.purchased" >{{x}} <li>
+</div>
+<!--  ---------------------------------------------------------- -->
+Shop: <input type="checkbox" ng-model="myCtrl.click3" /><br>
+<div ng-show="myCtrl.click3">&nbsp Add items : <input type="checkbox" ng-model="myCtrl.click4" />
+<h1>Shop Items Available</h1>
+<table border = "1" width="50%">
+<tr><th>Item</th><th>Price</th><th>Buy</th></tr>
+<tr ng-repeat ="x in myCtrl.shopList()"><td>{{x.name}}</td><td>{{x.price|currency}}</td><td><button ng-click="myCtrl.buy(x.price)">Buy<button></td></tr>
+</table>
+<p>total cost: {{myCtrl.total|currency}}</p>
+</div>
+<!-- ------------------------------------------------------- -->
+<div  ng-show="myCtrl.click4" class="shopAdd">
+<h1>Add Items To Shop</h1>
+<form >
+Item: <input ng-model ="myCtrl.addToShop.name" type="text" /><br>
+Price: <input ng-model ="myCtrl.addToShop.price" type="text" /><br>
+<button ng-disabled = "!myCtrl.isValid()" ng-click = "myCtrl.addShopItem()">Add</button>
+</div>
+<!-- ------------------------------------------------------------ -->

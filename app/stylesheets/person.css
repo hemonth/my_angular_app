@@ -1,0 +1,10 @@
+body.person{
+    background-image:url('../images/India.png');
+    background-repeat:no-repeat;
+    background-size: contain;
+}
+
+p.subscribe{
+  text-align: center;
+  font-size: xx-large;
+}

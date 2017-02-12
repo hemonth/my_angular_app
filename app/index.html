@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="main1">
+    <head>
+        <!--  <link rel="stylesheet" type="text/css" href="bootstrap.min.css" /> -->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+        <link rel="stylesheet" href="stylesheets/myManager.css"/>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="javascripts/maincontroller.js"></script>
+        <!-- <script src="javascripts/appService.js"></script> -->
+        <script src="javascripts/MyManager.js"></script>
+        <script src="javascripts/personController.js"></script>
+        <script src="javascripts/shopController.js"></script>
+        <script src="javascripts/shopManagerController.js"></script>
+        <script src="javascripts/applicaion1directive.js"></script>
+        <script src="javascripts/test1controller.js"></script>
+        <script src="javascripts/book.js"></script>
+        <link rel="stylesheet" href="stylesheets/menubar.css"/>
+        <link rel="stylesheet" href="stylesheets/person.css"/>
+    </head>
+    <body>
+        <header>
+            <ul class="menubar">
+                <li>
+                    <a href="#/purchaseHistory">Purchase History</a>
+                </li>
+                <li>
+                    <a href="#/myManager">Manager</a>
+                </li>
+                <!-- <li> <a href="#/myInventory">Items in Kitchen</a></li> -->
+                <li>
+                    <a href="#/shop">Shop</a>
+                </li>
+                <!-- <li> <a href="#/shopManager">Add To Shop</a></li> -->
+                <li>
+                    <a href="#/person">Subscribe</a>
+                </li>
+                <li>
+                    <a href="#/test">Test</a>
+                </li>
+                <li>
+                    <a href="#/book">Book</a>
+                </li>
+            </ul>
+        </header>
+        <br>
+        <div ng-view></div>
+
+    </body>
+
+</html>

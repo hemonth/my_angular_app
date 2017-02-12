@@ -1,0 +1,15 @@
+<html>
+<body>
+
+Shop Manager
+<div>
+<h1>Add Items To Shop</h1>
+<form >
+Item: <input ng-model ="mySm.addToShop.name" type="text" /><br>
+Price: <input ng-model ="mySm.addToShop.price" type="text" /><br>
+<button ng-disabled = "!mySm.isValid()" ng-click = "myCtrl.addShopItem(mySm.addToShop)">Add</button>
+</div>
+
+<!-- <footer> {{mysm.display}}   </footer> -->
+</body>
+</html>

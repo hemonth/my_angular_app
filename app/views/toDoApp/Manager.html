@@ -1,0 +1,31 @@
+<div class ="toDoList">
+    <h1>TO Do List</h1>
+    <ul  ng-repeat="x in myMng.products">
+        <li >{{x}}&nbsp
+            <span>
+                <select>
+                    <option ng-repeat="x in myMng.quantity">{{x}}
+                        <option></select>
+                    </span>&nbsp
+                    <button ng-click="myMng.removeItem($index)" ng-mouseenter="myMng.remove()" ng-mouseleave="myMng.empty()">X</button>&nbsp
+                    <button ng-model="myMng.item" ng-click="myMng.done($index)" ng-mouseenter="myMng.markAsDone()" ng-mouseleave="myMng.empty()">D</button>
+                </li><br>
+            </ul>
+            <input ng-model="myMng.addMe">
+            <button ng-disabled="!myMng.isValid()" ng-click="myMng.addItem()">Add</button>
+        </div>
+        <hr>
+        <div class="inventory">
+            <h1>Inventory</h1>
+            <ul ng-repeat="x in myMng.inventoryProducts">
+                <li>{{x}}&nbsp
+                    <button ng-click="myMng.removeItem1($index)" ng-mouseenter="myMng.remove()" ng-mouseleave="myMng.empty()">X</button>&nbsp
+                    <button ng-click="myMng.addItems($index)" ng-mouseenter="myMng.addToDo()" ng-mouseleave="myMng.empty()">D</button>
+                </li><br>
+            </ul>
+            <input ng-model="myMng.addToList">
+            <button ng-disabled="!myMng.isValid()" ng-click="myMng.addItem1()">Add</button>
+        </div>
+        <footer>
+            {{myMng.display}}
+        </footer>

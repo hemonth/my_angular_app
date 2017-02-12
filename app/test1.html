@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+       <script src="javascripts/angular.js"></script>
+	  <script src="javascripts/test1controller.js"></script>
+  </head>
+
+<body>
+<div class="container">
+<div ng-app="mainApp" ng-controller="mainController as ctrl">
+<table>
+  <tr ng-repeat="x in ctrl.names" >
+  <td><a href="#" ng-click="displayDescription(x)"><img src="images/{{ x.image}}.png" width="142" height="142" /></a><span>{{ x.name }}</span></td>
+  <td>{{ x.brand }}</td>
+  <td>{{ x.count }}</td>
+  </tr>
+</table>
+</div>
+<!-- <div id="sub" ng-app="subApp" ng-controller="mainController">
+<div>{{dummyContent}}
+<p ng-repeat="x in names">{{ x.desc }}</p>
+</div>
+
+ </div>  -->
+</div>
+</body>
