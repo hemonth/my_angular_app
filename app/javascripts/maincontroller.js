@@ -1,4 +1,4 @@
-angular.module('main1',['person','myShoppingList','TestApp','shop','shopManager','ngRoute','Manager','MyBook'])
+angular.module('main1',['person','myShoppingList','TestApp','shop','shopManager','ngRoute','Manager','MyBook','Java'])
   .config(['$routeProvider',
     function config($routeProvider) {
       $routeProvider
@@ -45,6 +45,11 @@ angular.module('main1',['person','myShoppingList','TestApp','shop','shopManager'
             templateUrl : "views/mybook/book.html",
             controller : "MyBookCtrl",
             controllerAs : "bc"
+        })
+        .when("/javaApp", {
+            templateUrl : "views/java/javatest.html",
+            controller : "JavaCtrl",
+            controllerAs : "jc"
         })
         .otherwise("/person");
     }
