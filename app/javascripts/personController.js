@@ -1,6 +1,6 @@
 var MyPerson = function($http,$filter,$document,$timeout){
 	var p =this;
-
+        p.findUser="";
 	p.persons = [];
 	p.Person = {name:"",email:"",place:""};
 	p.subscribeMessage = "";
@@ -25,6 +25,14 @@ var MyPerson = function($http,$filter,$document,$timeout){
 			p.persons = data;
 		});
 	}
+            p.findPerson = function(){
+                p.Person = {name:"",email:"",place:""};
+                alert('http://localhost:8080/person/find/'+p.findUser);
+                $http.get('http://localhost:8080/person/find/'+p.findUser)
+                        .success(function(data){
+                       p.persons = data;     
+                });
+            }
         //------------------------------------------------------------------------
 //	 p.addPersons = function(){
 //	 		p.updateMessage = "updating..";
@@ -41,7 +49,6 @@ var MyPerson = function($http,$filter,$document,$timeout){
 		console.log(p.Person);
 		p.subscribe = true;
 		$http.post('http://localhost:8080/person/save', p.Person).success(function(data, status, headers, config) {
-   alert("Success");
          $timeout(p.subscribeMessage= "Thanks for subscribing!!",5);
 	 p.updateMessage = status;
 	 p.getPersons();
