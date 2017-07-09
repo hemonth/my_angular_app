@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <head>
     <style>
-        .button {
-            cursor: pointer;
-            color: blue;
+        .person_table{
+            width: 50%;
         }
-        td,th{
-            border: 1px solid gray;
-            width: 25%;
-            text-align: left;
-        }
-        table {
-            width: 600px;
+        .person_form{
+            width: 50%;
         }
     </style>
 </head>
 <body class = "person">
+    <div class="form-inline">
+        <label class="col-2 col-form-label">Find Person:</label> <input class="form-control" type = "text" ng-model = "p.findUser"></input>
+    <button class="btn btn-primary" ng-click="p.findPerson()">Find</button>
+    </div>
     <h3>List Of People Subscribed</h3>
-    <table>
-        <tr><th>name</th><th>Email</th><th>Place</th></tr>
+    <div class="person_table">
+    <table  class="table table-bordered">
+        <tr class="table-active"><th class="text-center">Name</th><th class="text-center">Email</th><th class="text-center">Place</th></tr>
         <tr ng-repeat ="x in p.persons"><td>{{x.name}}</td><td>{{x.email}}</td><td>{{x.place}}</td></tr>
     </table>
+    </div>
+    <div class="person_form">
     <h1>Add a new person </h1>
     message:{{p.updateMessage}}<br>
-    <form>
-        name: <input type = "text" ng-model = "p.Person.name" /><br>
-        Email: <input  type = "text" ng-model = "p.Person.email" /><br>
-        Place: <input type = "text" ng-model = "p.Person.place" /><br>
-        <button ng-click ="p.addPersons()" >Submit</button>
+    <form class="form-group-sm">
+        <label>Name:</label>  <input class="form-control" type = "text" ng-model = "p.Person.name" /><br>
+        <label>Email:</label>  <input class="form-control" type = "text" ng-model = "p.Person.email" /><br>
+        <label>Place:</label>  <input class="form-control" type = "text" ng-model = "p.Person.place" /><br>
+        <button class="btn btn-primary" style="float: start" ng-click ="p.addPersons()" >Submit</button>
     </form>
     {{p.subscribeMessage}}
+    </div>
 <!--    <p class ="subscribe" ng-show= "p.subscribe">
         {{p.subscribeMessage}}
     </p>-->
